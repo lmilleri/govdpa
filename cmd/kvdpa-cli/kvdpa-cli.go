@@ -7,7 +7,7 @@ import (
 	"strings"
 	"text/template"
 
-	vdpa "github.com/k8snetworkplumbingwg/govdpa/pkg/kvdpa"
+	vdpa "github.com/lmilleri/govdpa/pkg/kvdpa"
 	cli "github.com/urfave/cli/v2"
 )
 

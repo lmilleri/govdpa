@@ -1,4 +1,4 @@
-module github.com/k8snetworkplumbingwg/govdpa
+module github.com/lmilleri/govdpa
 
 go 1.14
 

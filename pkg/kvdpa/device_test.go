@@ -10,7 +10,7 @@ import (
 	"github.com/vishvananda/netlink/nl"
 	"golang.org/x/sys/unix"
 
-	"github.com/k8snetworkplumbingwg/govdpa/pkg/kvdpa/mocks"
+	"github.com/lmilleri/govdpa/pkg/kvdpa/mocks"
 )
 
 // Helper function for testing. It returns the information of a vdpadevice

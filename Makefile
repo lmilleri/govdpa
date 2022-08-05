@@ -3,7 +3,7 @@
 #
 
 PACKAGE=govdpa
-ORG_PATH=github.com/k8snetworkplumbingwg
+ORG_PATH=github.com/lmilleri
 REPO_PATH=$(ORG_PATH)/$(PACKAGE)
 GOPATH=$(CURDIR)/.gopath
 GOBIN=$(CURDIR)/bin

@@ -4,7 +4,7 @@ import (
 	"net/rpc"
 	"sync"
 
-	jsonrpc "github.com/k8snetworkplumbingwg/govdpa/pkg/internal/jsonrpc"
+	jsonrpc "github.com/lmilleri/govdpa/pkg/internal/jsonrpc"
 )
 
 const (

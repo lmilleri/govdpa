@@ -6,7 +6,7 @@ import (
 	"os"
 	"strings"
 
-	vdpa "github.com/k8snetworkplumbingwg/govdpa/pkg/uvdpa"
+	vdpa "github.com/lmilleri/govdpa/pkg/uvdpa"
 )
 
 var client vdpa.UserDaemonStub

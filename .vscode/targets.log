@@ -1,0 +1,475 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+running gofmt...
+# GNU Make 4.2.1
+# Built for x86_64-redhat-linux-gnu
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Fri Aug  5 08:34:20 2022
+
+# Variables
+
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+GUESTFISH_INIT = \e[1;34m
+# automatic
+?F = $(notdir $?)
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# makefile (from 'Makefile', line 11)
+PKGS = $(or $(PKG),$(shell cd $(BASE) && env GOPATH=$(GOPATH) $(GO) list ./... | grep -v "^$(PACKAGE)/vendor/"))
+# environment
+DESKTOP_SESSION = gnome
+# default
+.SHELLFLAGS := -c
+# makefile (from 'Makefile', line 26)
+GO = go
+# makefile (from 'Makefile', line 17)
+BINARY_NAME = uvdpa-cli kvdpa-cli
+# environment
+XDG_SESSION_TYPE = x11
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+XAUTHORITY = /run/user/4209198/gdm/Xauthority
+# environment
+GDMSESSION = gnome
+# environment
+XMODIFIERS = @im=ibus
+# environment
+GUESTFISH_OUTPUT = \e[0m
+# makefile
+CURDIR := /home/lmilleri/go/src/github.com/lmilleri/govdpa
+# makefile
+SHELL = /bin/sh
+# environment
+GDM_LANG = en_US.UTF-8
+# makefile (from 'Makefile', line 31)
+Q = $(if $(filter 1,$V),,@)
+# environment
+VTE_VERSION = 5204
+# makefile (from 'Makefile', line 30)
+V = 0
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# environment
+_ = /usr/bin/make
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# automatic
+@F = $(notdir $@)
+# environment
+HISTCONTROL = ignoreboth
+# environment
+USERNAME = lmilleri
+ 
+# environment
+XDG_DATA_DIRS = /home/lmilleri/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/4209198/bus
+# makefile (from 'Makefile', line 16)
+BUILDDIR = $(CURDIR)/build
+# environment
+GUESTFISH_PS1 = \[\e[1;32m\]><fs>\[\e[0;31m\] 
+# environment
+LESSOPEN = ||/usr/bin/lesspipe.sh %s
+# makefile (from 'Makefile', line 5)
+PACKAGE = govdpa
+# environment
+VSCODE_CWD = /home/lmilleri/go/src/github.com/lmilleri/govdpa
+# environment
+GOPROXY = https://proxy.golang.org,direct
+# environment
+GOMODCACHE = /home/lmilleri/go/pkg/mod
+# environment
+KRB5CCNAME = KCM:
+# default
+MAKE_HOST := x86_64-redhat-linux-gnu
+# environment
+PATH = /home/lmilleri/.local/bin:/home/lmilleri/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin
+# environment
+SESSION_MANAGER = local/unix:@/tmp/.ICE-unix/3842,unix/unix:/tmp/.ICE-unix/3842
+# environment
+XDG_RUNTIME_DIR = /run/user/4209198
+# makefile (from 'Makefile', line 29)
+TIMEOUT = 15
+# makefile (from 'Makefile', line 10)
+BASE = $(GOPATH)/src/$(REPO_PATH)
+# makefile (from 'Makefile', line 60)
+GOLINT = $(GOBIN)/golint
+# makefile (from 'Makefile', line 8)
+GOPATH = $(CURDIR)/.gopath
+# environment
+XDG_MENU_PREFIX = gnome-
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# environment
+LS_COLORS = rs=0:di=38;5;33:ln=38;5;51:mh=00:pi=40;38;5;11:so=38;5;13:do=38;5;5:bd=48;5;232;38;5;11:cd=48;5;232;38;5;3:or=48;5;232;38;5;9:mi=01;05;37;41:su=48;5;196;38;5;15:sg=48;5;11;38;5;16:ca=48;5;196;38;5;226:tw=48;5;10;38;5;16:ow=48;5;10;38;5;21:st=48;5;21;38;5;15:ex=38;5;40:*.tar=38;5;9:*.tgz=38;5;9:*.arc=38;5;9:*.arj=38;5;9:*.taz=38;5;9:*.lha=38;5;9:*.lz4=38;5;9:*.lzh=38;5;9:*.lzma=38;5;9:*.tlz=38;5;9:*.txz=38;5;9:*.tzo=38;5;9:*.t7z=38;5;9:*.zip=38;5;9:*.z=38;5;9:*.dz=38;5;9:*.gz=38;5;9:*.lrz=38;5;9:*.lz=38;5;9:*.lzo=38;5;9:*.xz=38;5;9:*.zst=38;5;9:*.tzst=38;5;9:*.bz2=38;5;9:*.bz=38;5;9:*.tbz=38;5;9:*.tbz2=38;5;9:*.tz=38;5;9:*.deb=38;5;9:*.rpm=38;5;9:*.jar=38;5;9:*.war=38;5;9:*.ear=38;5;9:*.sar=38;5;9:*.rar=38;5;9:*.alz=38;5;9:*.ace=38;5;9:*.zoo=38;5;9:*.cpio=38;5;9:*.7z=38;5;9:*.rz=38;5;9:*.cab=38;5;9:*.wim=38;5;9:*.swm=38;5;9:*.dwm=38;5;9:*.esd=38;5;9:*.jpg=38;5;13:*.jpeg=38;5;13:*.mjpg=38;5;13:*.mjpeg=38;5;13:*.gif=38;5;13:*.bmp=38;5;13:*.pbm=38;5;13:*.pgm=38;5;13:*.ppm=38;5;13:*.tga=38;5;13:*.xbm=38;5;13:*.xpm=38;5;13:*.tif=38;5;13:*.tiff=38;5;13:*.png=38;5;13:*.svg=38;5;13:*.svgz=38;5;13:*.mng=38;5;13:*.pcx=38;5;13:*.mov=38;5;13:*.mpg=38;5;13:*.mpeg=38;5;13:*.m2v=38;5;13:*.mkv=38;5;13:*.webm=38;5;13:*.ogm=38;5;13:*.mp4=38;5;13:*.m4v=38;5;13:*.mp4v=38;5;13:*.vob=38;5;13:*.qt=38;5;13:*.nuv=38;5;13:*.wmv=38;5;13:*.asf=38;5;13:*.rm=38;5;13:*.rmvb=38;5;13:*.flc=38;5;13:*.avi=38;5;13:*.fli=38;5;13:*.flv=38;5;13:*.gl=38;5;13:*.dl=38;5;13:*.xcf=38;5;13:*.xwd=38;5;13:*.yuv=38;5;13:*.cgm=38;5;13:*.emf=38;5;13:*.ogv=38;5;13:*.ogx=38;5;13:*.aac=38;5;45:*.au=38;5;45:*.flac=38;5;45:*.m4a=38;5;45:*.mid=38;5;45:*.midi=38;5;45:*.mka=38;5;45:*.mp3=38;5;45:*.mpc=38;5;45:*.ogg=38;5;45:*.ra=38;5;45:*.wav=38;5;45:*.oga=38;5;45:*.opus=38;5;45:*.spx=38;5;45:*.xspf=38;5;45:
+# environment
+XDG_SESSION_DESKTOP = gnome
+# environment
+SSH_AUTH_SOCK = /run/user/4209198/keyring/ssh
+# automatic
+%F = $(notdir $%)
+# makefile (from 'Makefile', line 9)
+GOBIN = $(CURDIR)/bin
+# environment
+DISPLAY = :1
+# environment
+PWD = /home/lmilleri/go/src/github.com/lmilleri/govdpa
+# default
+.LOADED := 
+# environment
+XDG_SEAT = seat0
+# environment
+HISTTIMEFORMAT = %F %T 
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = GNOME
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /home/lmilleri
+# environment
+VSCODE_CLI = 1
+# environment
+VSCODE_CODE_CACHE_PATH = /home/lmilleri/.config/Code/CachedData/3b889b090b5ad5793f524b5d1d39fda662b96a2a
+# environment
+LOGNAME = lmilleri
+# environment
+TERM = xterm-256color
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# makefile (from 'Makefile', line 28)
+GOFMT = gofmt
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# default
+MAKE_VERSION := 4.2.1
+# environment
+GNOME_DESKTOP_SESSION_ID = this-is-deprecated
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+HOSTNAME = lmilleri.remote.csb
+# environment
+XDG_VTNR = 2
+# environment
+MAKELEVEL := 0
+# makefile (from 'Makefile', line 13)
+TESTPKGS = $(shell env GOPATH=$(GOPATH) $(GO) list -f '{{ if or .TestGoFiles .XTestGoFiles }}{{ .ImportPath }}{{ end }}' $(PKGS))
+# environment
+SSH_ASKPASS = /usr/libexec/openssh/gnome-ssh-askpass
+# environment
+COLORTERM = truecolor
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+QT_IM_MODULE = ibus
+# environment
+SHLVL = 4
+# environment
+XDG_SESSION_ID = 2
+# environment
+USER = lmilleri
+# makefile
+.DEFAULT_GOAL := all
+# environment
+XDG_CURRENT_DESKTOP = GNOME
+# environment
+LIBVIRT_DEFAULT_URI = qemu:///system
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# default
+MAKE_COMMAND := make
+# environment
+OLDPWD = /home/lmilleri/go/src/github.com/lmilleri
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# environment
+VSCODE_IPC_HOOK = /run/user/4209198/vscode-b20bb363-1.69.2-main.sock
+# makefile
+MAKEFLAGS = pqrR
+# environment
+MFLAGS = -pqrR
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+MAIL = /var/spool/mail/lmilleri
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# makefile (from 'Makefile', line 18)
+BINARY_PATH = $(patsubst %, $(BUILDDIR)/%, $(BINARY_NAME))
+# environment
+GDK_BACKEND = x11
+# automatic
++F = $(notdir $+)
+# environment
+NO_AT_BRIDGE = 1
+# environment
+define BASH_FUNC_which%%
+() {  ( alias;
+ eval ${which_declare} ) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot $@
+}
+endef
+# 'override' directive
+.SHELLSTATUS := 0
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# environment
+LC_ALL = C
+# makefile (from 'Makefile', line 19)
+LIBRARIES = kvdpa uvdpa
+# environment
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
+# environment
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/2e3c81b5_f547_4ae2_b0bb_1858196dfa4f
+# automatic
+^F = $(notdir $^)
+# makefile (from 'Makefile', line 6)
+ORG_PATH = github.com/k8snetworkplumbingwg
+# environment
+GNOME_TERMINAL_SERVICE = :1.110
+# default
+SUFFIXES := 
+# environment
+HISTSIZE = 10000
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# makefile (from 'Makefile', line 27)
+GODOC = godoc
+# environment
+WINDOWPATH = 2
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# makefile (from 'Makefile', line 15)
+GOFILES = $(shell find . -name *.go | grep -vE "(\/vendor\/)|(_test.go)")
+# environment
+GJS_DEBUG_OUTPUT = stderr
+# default
+.RECIPEPREFIX := 
+# makefile (from 'Makefile', line 7)
+REPO_PATH = $(ORG_PATH)/$(PACKAGE)
+# environment
+LANG = C
+# environment
+which_declare = declare -f
+# environment
+VSCODE_PID = 12616
+# environment
+GUESTFISH_RESTORE = \e[0m
+# variable set hash-table stats:
+# Load=128/1024=12%, Rehash=0, Collisions=21/213=10%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 64771, inode 67314561): 16 files, no impossibilities.
+
+# 16 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+/home/lmilleri/go/src/github.com/lmilleri/govdpa/build/%: cmd/kvdpa-cli/kvdpa-cli.go cmd/uvdpa-cli/uvdpa-cli.go pkg/internal/jsonrpc/jsonrpc.go pkg/uvdpa/dpdkVdpaC.go pkg/uvdpa/mockClient.go pkg/uvdpa/userClient.go pkg/kvdpa/mgmtdev.go pkg/kvdpa/mocks/NetlinkOps.go pkg/kvdpa/netlink.go pkg/kvdpa/vhost.go pkg/kvdpa/virtio.go pkg/kvdpa/device.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/addr.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/addr_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/bpf_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/bridge_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/class.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/class_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/conntrack_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/conntrack_unspecified.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/devlink_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/filter.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/filter_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/fou.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/fou_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/fou_unspecified.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/genetlink_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/genetlink_unspecified.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/gtp_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/handle_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/handle_unspecified.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/ioctl_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/link.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/link_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/link_tuntap_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/neigh.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/neigh_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/netlink.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/netlink_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/netlink_unspecified.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/netns_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/netns_unspecified.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/nl/addr_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/nl/bridge_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/nl/conntrack_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/nl/devlink_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/nl/genetlink_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/nl/link_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/nl/mpls_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/nl/nl_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/nl/nl_unspecified.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/nl/rdma_link_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/nl/route_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/nl/seg6_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/nl/seg6local_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/nl/syscall.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/nl/tc_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/nl/xfrm_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/nl/xfrm_monitor_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/nl/xfrm_policy_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/nl/xfrm_state_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/order.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/protinfo.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/protinfo_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/qdisc.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/qdisc_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/rdma_link_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/route.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/route_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/route_unspecified.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/rule.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/rule_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/socket.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/socket_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/xfrm.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/xfrm_monitor_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/xfrm_policy.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/xfrm_policy_linux.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/xfrm_state.go .gopath/pkg/mod/github.com/vishvananda/netlink@v1.1.0/xfrm_state_linux.go .gopath/pkg/mod/github.com/vishvananda/netns@v0.0.0-20191106174202-0a2b9b5464df/netns.go .gopath/pkg/mod/github.com/vishvananda/netns@v0.0.0-20191106174202-0a2b9b5464df/netns_linux.go .gopath/pkg/mod/github.com/vishvananda/netns@v0.0.0-20191106174202-0a2b9b5464df/netns_unspecified.go .gopath/pkg/mod/github.com/stretchr/testify@v1.7.0/assert/assertion_compare.go .gopath/pkg/mod/github.com/stretchr/testify@v1.7.0/assert/assertion_format.go .gopath/pkg/mod/github.com/stretchr/testify@v1.7.0/assert/assertion_forward.go .gopath/pkg/mod/github.com/stretchr/testify@v1.7.0/assert/assertion_order.go .gopath/pkg/mod/github.com/stretchr/testify@v1.7.0/assert/assertions.go .gopath/pkg/mod/github.com/stretchr/testify@v1.7.0/assert/doc.go .gopath/pkg/mod/github.com/stretchr/testify@v1.7.0/assert/errors.go .gopath/pkg/mod/github.com/stretchr/testify@v1.7.0/assert/forward_assertions.go .gopath/pkg/mod/github.com/stretchr/testify@v1.7.0/assert/http_assertions.go .gopath/pkg/mod/github.com/stretchr/testify@v1.7.0/doc.go .gopath/pkg/mod/github.com/stretchr/testify@v1.7.0/http/doc.go .gopath/pkg/mod/github.com/stretchr/testify@v1.7.0/http/test_response_writer.go .gopath/pkg/mod/github.com/stretchr/testify@v1.7.0/http/test_round_tripper.go .gopath/pkg/mod/github.com/stretchr/testify@v1.7.0/mock/doc.go .gopath/pkg/mod/github.com/stretchr/testify@v1.7.0/mock/mock.go .gopath/pkg/mod/github.com/stretchr/testify@v1.7.0/require/doc.go .gopath/pkg/mod/github.com/stretchr/testify@v1.7.0/require/forward_requirements.go .gopath/pkg/mod/github.com/stretchr/testify@v1.7.0/require/require.go .gopath/pkg/mod/github.com/stretchr/testify@v1.7.0/require/require_forward.go .gopath/pkg/mod/github.com/stretchr/testify@v1.7.0/require/requirements.go .gopath/pkg/mod/github.com/stretchr/testify@v1.7.0/suite/doc.go .gopath/pkg/mod/github.com/stretchr/testify@v1.7.0/suite/interfaces.go .gopath/pkg/mod/github.com/stretchr/testify@v1.7.0/suite/stats.go .gopath/pkg/mod/github.com/stretchr/testify@v1.7.0/suite/suite.go .gopath/pkg/mod/github.com/stretchr/objx@v0.1.0/accessors.go .gopath/pkg/mod/github.com/stretchr/objx@v0.1.0/constants.go .gopath/pkg/mod/github.com/stretchr/objx@v0.1.0/conversions.go .gopath/pkg/mod/github.com/stretchr/objx@v0.1.0/doc.go .gopath/pkg/mod/github.com/stretchr/objx@v0.1.0/map.go .gopath/pkg/mod/github.com/stretchr/objx@v0.1.0/mutations.go .gopath/pkg/mod/github.com/stretchr/objx@v0.1.0/security.go .gopath/pkg/mod/github.com/stretchr/objx@v0.1.0/tests.go .gopath/pkg/mod/github.com/stretchr/objx@v0.1.0/type_specific_codegen.go .gopath/pkg/mod/github.com/stretchr/objx@v0.1.0/value.go .gopath/pkg/mod/github.com/pmezard/go-difflib@v1.0.0/difflib/difflib.go .gopath/pkg/mod/github.com/davecgh/go-spew@v1.1.0/spew/bypass.go .gopath/pkg/mod/github.com/davecgh/go-spew@v1.1.0/spew/bypasssafe.go .gopath/pkg/mod/github.com/davecgh/go-spew@v1.1.0/spew/common.go .gopath/pkg/mod/github.com/davecgh/go-spew@v1.1.0/spew/config.go .gopath/pkg/mod/github.com/davecgh/go-spew@v1.1.0/spew/doc.go .gopath/pkg/mod/github.com/davecgh/go-spew@v1.1.0/spew/dump.go .gopath/pkg/mod/github.com/davecgh/go-spew@v1.1.0/spew/format.go .gopath/pkg/mod/github.com/davecgh/go-spew@v1.1.0/spew/spew.go .gopath/pkg/mod/github.com/davecgh/go-spew@v1.1.0/spew/testdata/dumpcgo.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/altsrc/flag.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/altsrc/flag_generated.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/altsrc/input_source_context.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/altsrc/json_source_context.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/altsrc/map_input_source.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/altsrc/toml_file_loader.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/altsrc/yaml_file_loader.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/app.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/args.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/category.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/cli.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/command.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/context.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/docs.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/errors.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/fish.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/flag.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/flag_bool.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/flag_duration.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/flag_float64.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/flag_float64_slice.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/flag_generic.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/flag_int.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/flag_int64.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/flag_int64_slice.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/flag_int_slice.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/flag_path.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/flag_string.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/flag_string_slice.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/flag_timestamp.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/flag_uint.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/flag_uint64.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/funcs.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/help.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/internal/build/build.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/internal/example-cli/example-cli.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/internal/example-hello-world/example-hello-world.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/parse.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/sort.go .gopath/pkg/mod/github.com/urfave/cli/v2@v2.2.0/template.go .gopath/pkg/mod/github.com/cpuguy83/go-md2man/v2@v2.0.0/md2man.go .gopath/pkg/mod/github.com/cpuguy83/go-md2man/v2@v2.0.0/md2man/md2man.go .gopath/pkg/mod/github.com/cpuguy83/go-md2man/v2@v2.0.0/md2man/roff.go .gopath/pkg/mod/github.com/russross/blackfriday/v2@v2.0.1/block.go .gopath/pkg/mod/github.com/russross/blackfriday/v2@v2.0.1/doc.go .gopath/pkg/mod/github.com/russross/blackfriday/v2@v2.0.1/esc.go .gopath/pkg/mod/github.com/russross/blackfriday/v2@v2.0.1/html.go .gopath/pkg/mod/github.com/russross/blackfriday/v2@v2.0.1/inline.go .gopath/pkg/mod/github.com/russross/blackfriday/v2@v2.0.1/markdown.go .gopath/pkg/mod/github.com/russross/blackfriday/v2@v2.0.1/node.go .gopath/pkg/mod/github.com/russross/blackfriday/v2@v2.0.1/smartypants.go .gopath/pkg/mod/github.com/shurcoo!l/sanitized_anchor_name@v1.0.0/main.go .gopath/pkg/mod/gopkg.in/yaml.v3@v3.0.0-20200313102051-9f266ea9e77c/apic.go .gopath/pkg/mod/gopkg.in/yaml.v3@v3.0.0-20200313102051-9f266ea9e77c/decode.go .gopath/pkg/mod/gopkg.in/yaml.v3@v3.0.0-20200313102051-9f266ea9e77c/emitterc.go .gopath/pkg/mod/gopkg.in/yaml.v3@v3.0.0-20200313102051-9f266ea9e77c/encode.go .gopath/pkg/mod/gopkg.in/yaml.v3@v3.0.0-20200313102051-9f266ea9e77c/parserc.go .gopath/pkg/mod/gopkg.in/yaml.v3@v3.0.0-20200313102051-9f266ea9e77c/readerc.go .gopath/pkg/mod/gopkg.in/yaml.v3@v3.0.0-20200313102051-9f266ea9e77c/resolve.go .gopath/pkg/mod/gopkg.in/yaml.v3@v3.0.0-20200313102051-9f266ea9e77c/scannerc.go .gopath/pkg/mod/gopkg.in/yaml.v3@v3.0.0-20200313102051-9f266ea9e77c/sorter.go .gopath/pkg/mod/gopkg.in/yaml.v3@v3.0.0-20200313102051-9f266ea9e77c/writerc.go .gopath/pkg/mod/gopkg.in/yaml.v3@v3.0.0-20200313102051-9f266ea9e77c/yaml.go .gopath/pkg/mod/gopkg.in/yaml.v3@v3.0.0-20200313102051-9f266ea9e77c/yamlh.go .gopath/pkg/mod/gopkg.in/yaml.v3@v3.0.0-20200313102051-9f266ea9e77c/yamlprivateh.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/cpu/byteorder.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/cpu/cpu.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/cpu/cpu_aix.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/cpu/cpu_arm.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/cpu/cpu_arm64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/cpu/cpu_gc_arm64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/cpu/cpu_gc_s390x.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/cpu/cpu_gc_x86.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/cpu/cpu_gccgo_arm64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/cpu/cpu_gccgo_s390x.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/cpu/cpu_gccgo_x86.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/cpu/cpu_linux.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/cpu/cpu_linux_arm.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/cpu/cpu_linux_arm64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/cpu/cpu_linux_mips64x.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/cpu/cpu_linux_noinit.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/cpu/cpu_linux_ppc64x.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/cpu/cpu_linux_s390x.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/cpu/cpu_mips64x.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/cpu/cpu_mipsx.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/cpu/cpu_netbsd_arm64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/cpu/cpu_other_arm.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/cpu/cpu_other_arm64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/cpu/cpu_other_mips64x.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/cpu/cpu_ppc64x.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/cpu/cpu_riscv64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/cpu/cpu_s390x.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/cpu/cpu_wasm.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/cpu/cpu_x86.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/cpu/cpu_zos.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/cpu/cpu_zos_s390x.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/cpu/hwcap_linux.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/cpu/syscall_aix_gccgo.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/cpu/syscall_aix_ppc64_gc.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/execabs/execabs.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/internal/unsafeheader/unsafeheader.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/plan9/const_plan9.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/plan9/dir_plan9.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/plan9/env_plan9.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/plan9/errors_plan9.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/plan9/mksyscall.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/plan9/pwd_go15_plan9.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/plan9/pwd_plan9.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/plan9/race.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/plan9/race0.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/plan9/str.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/plan9/syscall.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/plan9/syscall_plan9.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/plan9/zsyscall_plan9_386.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/plan9/zsyscall_plan9_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/plan9/zsyscall_plan9_arm.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/plan9/zsysnum_plan9.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/affinity_linux.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/aliases.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/bluetooth_linux.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/cap_freebsd.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/constants.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/dev_aix_ppc.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/dev_aix_ppc64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/dev_darwin.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/dev_dragonfly.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/dev_freebsd.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/dev_linux.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/dev_netbsd.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/dev_openbsd.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/dev_zos.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/dirent.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/endian_big.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/endian_little.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/env_unix.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/epoll_zos.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/errors_freebsd_386.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/errors_freebsd_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/errors_freebsd_arm.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/errors_freebsd_arm64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/fcntl.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/fcntl_darwin.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/fcntl_linux_32bit.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/fdset.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/fstatfs_zos.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/gccgo.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/gccgo_linux_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ifreq_linux.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/internal/mkmerge/mkmerge.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ioctl.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ioctl_linux.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ioctl_zos.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/linux/mkall.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/linux/mksysnum.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/linux/types.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/mkasm_darwin.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/mkpost.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/mksyscall.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/mksyscall_aix_ppc.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/mksyscall_aix_ppc64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/mksyscall_solaris.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/mksysctl_openbsd.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/mksysnum.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/pagesize_unix.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/pledge_openbsd.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ptrace_darwin.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ptrace_ios.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/race.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/race0.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/readdirent_getdents.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/readdirent_getdirentries.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/sockcmsg_dragonfly.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/sockcmsg_linux.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/sockcmsg_unix.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/sockcmsg_unix_other.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/str.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_aix.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_aix_ppc.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_aix_ppc64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_bsd.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_darwin.1_12.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_darwin.1_13.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_darwin.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_darwin_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_darwin_arm64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_darwin_libSystem.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_dragonfly.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_dragonfly_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_freebsd.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_freebsd_386.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_freebsd_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_freebsd_arm.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_freebsd_arm64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_illumos.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_linux.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_linux_386.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_linux_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_linux_amd64_gc.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_linux_arm.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_linux_arm64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_linux_gc.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_linux_gc_386.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_linux_gc_arm.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_linux_gccgo_386.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_linux_gccgo_arm.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_linux_mips64x.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_linux_mipsx.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_linux_ppc.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_linux_ppc64x.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_linux_riscv64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_linux_s390x.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_linux_sparc64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_netbsd.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_netbsd_386.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_netbsd_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_netbsd_arm.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_netbsd_arm64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_openbsd.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_openbsd_386.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_openbsd_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_openbsd_arm.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_openbsd_arm64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_openbsd_mips64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_solaris.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_solaris_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_unix.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_unix_gc.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_unix_gc_ppc64x.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/syscall_zos_s390x.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/sysvshm_linux.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/sysvshm_unix.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/sysvshm_unix_other.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/timestruct.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/types_aix.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/types_darwin.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/types_dragonfly.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/types_freebsd.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/types_illumos.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/types_netbsd.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/types_openbsd.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/types_solaris.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/unveil_openbsd.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/xattr_bsd.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zerrors_aix_ppc.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zerrors_aix_ppc64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zerrors_darwin_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zerrors_darwin_arm64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zerrors_dragonfly_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zerrors_freebsd_386.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zerrors_freebsd_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zerrors_freebsd_arm.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zerrors_freebsd_arm64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zerrors_linux.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zerrors_linux_386.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zerrors_linux_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zerrors_linux_arm.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zerrors_linux_arm64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zerrors_linux_mips.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zerrors_linux_mips64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zerrors_linux_mips64le.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zerrors_linux_mipsle.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zerrors_linux_ppc.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zerrors_linux_ppc64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zerrors_linux_ppc64le.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zerrors_linux_riscv64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zerrors_linux_s390x.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zerrors_linux_sparc64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zerrors_netbsd_386.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zerrors_netbsd_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zerrors_netbsd_arm.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zerrors_netbsd_arm64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zerrors_openbsd_386.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zerrors_openbsd_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zerrors_openbsd_arm.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zerrors_openbsd_arm64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zerrors_openbsd_mips64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zerrors_solaris_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zerrors_zos_s390x.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zptrace_armnn_linux.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zptrace_linux_arm64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zptrace_mipsnn_linux.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zptrace_mipsnnle_linux.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zptrace_x86_linux.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_aix_ppc.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_aix_ppc64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_aix_ppc64_gc.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_aix_ppc64_gccgo.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_darwin_amd64.1_13.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_darwin_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_darwin_arm64.1_13.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_darwin_arm64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_dragonfly_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_freebsd_386.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_freebsd_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_freebsd_arm.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_freebsd_arm64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_illumos_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_linux.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_linux_386.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_linux_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_linux_arm.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_linux_arm64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_linux_mips.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_linux_mips64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_linux_mips64le.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_linux_mipsle.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_linux_ppc.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_linux_ppc64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_linux_ppc64le.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_linux_riscv64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_linux_s390x.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_linux_sparc64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_netbsd_386.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_netbsd_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_netbsd_arm.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_netbsd_arm64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_openbsd_386.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_openbsd_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_openbsd_arm.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_openbsd_arm64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_openbsd_mips64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_solaris_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsyscall_zos_s390x.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsysctl_openbsd_386.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsysctl_openbsd_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsysctl_openbsd_arm.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsysctl_openbsd_arm64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsysctl_openbsd_mips64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsysnum_darwin_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsysnum_darwin_arm64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsysnum_dragonfly_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsysnum_freebsd_386.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsysnum_freebsd_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsysnum_freebsd_arm.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsysnum_freebsd_arm64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsysnum_linux_386.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsysnum_linux_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsysnum_linux_arm.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsysnum_linux_arm64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsysnum_linux_mips.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsysnum_linux_mips64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsysnum_linux_mips64le.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsysnum_linux_mipsle.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsysnum_linux_ppc.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsysnum_linux_ppc64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsysnum_linux_ppc64le.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsysnum_linux_riscv64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsysnum_linux_s390x.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsysnum_linux_sparc64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsysnum_netbsd_386.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsysnum_netbsd_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsysnum_netbsd_arm.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsysnum_netbsd_arm64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsysnum_openbsd_386.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsysnum_openbsd_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsysnum_openbsd_arm.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsysnum_openbsd_arm64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsysnum_openbsd_mips64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/zsysnum_zos_s390x.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ztypes_aix_ppc.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ztypes_aix_ppc64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ztypes_darwin_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ztypes_darwin_arm64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ztypes_dragonfly_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ztypes_freebsd_386.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ztypes_freebsd_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ztypes_freebsd_arm.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ztypes_freebsd_arm64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ztypes_illumos_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ztypes_linux.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ztypes_linux_386.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ztypes_linux_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ztypes_linux_arm.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ztypes_linux_arm64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ztypes_linux_mips.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ztypes_linux_mips64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ztypes_linux_mips64le.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ztypes_linux_mipsle.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ztypes_linux_ppc.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ztypes_linux_ppc64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ztypes_linux_ppc64le.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ztypes_linux_riscv64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ztypes_linux_s390x.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ztypes_linux_sparc64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ztypes_netbsd_386.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ztypes_netbsd_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ztypes_netbsd_arm.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ztypes_netbsd_arm64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ztypes_openbsd_386.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ztypes_openbsd_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ztypes_openbsd_arm.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ztypes_openbsd_arm64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ztypes_openbsd_mips64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ztypes_solaris_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/unix/ztypes_zos_s390x.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/aliases.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/dll_windows.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/env_windows.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/eventlog.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/exec_windows.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/memory_windows.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/mksyscall.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/mkwinsyscall/mkwinsyscall.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/race.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/race0.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/registry/key.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/registry/mksyscall.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/registry/syscall.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/registry/value.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/registry/zsyscall_windows.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/security_windows.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/service.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/setupapi_windows.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/str.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/svc/debug/log.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/svc/debug/service.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/svc/eventlog/install.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/svc/eventlog/log.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/svc/example/beep.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/svc/example/install.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/svc/example/main.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/svc/example/manage.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/svc/example/service.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/svc/mgr/config.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/svc/mgr/mgr.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/svc/mgr/recovery.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/svc/mgr/service.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/svc/security.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/svc/service.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/syscall.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/syscall_windows.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/types_windows.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/types_windows_386.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/types_windows_amd64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/types_windows_arm.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/types_windows_arm64.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/zerrors_windows.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/zknownfolderids_windows.go .gopath/pkg/mod/golang.org/x/sys@v0.0.0-20211216021012-1d35b9e2eb4e/windows/zsyscall_windows.go | /home/lmilleri/go/src/github.com/lmilleri/govdpa/build
+#  recipe to execute (from 'Makefile', line 54):
+	 $(info Building $* )
+	@cd cmd/$* && $(GO) build -o $(BUILDDIR)/$*
+
+# 1 implicit rules, 0 (0.0%) terminal.
+
+# Files
+
+ 
+# Not a target:
+/home/lmilleri/go/src/github.com/lmilleri/govdpa/build/kvdpa-cli:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+all: fmt lint build
+#  Phony target (prerequisite of .PHONY).
+#  Command line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
+
+.PHONY: all lint fmt clean help
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/lmilleri/go/src/github.com/lmilleri/govdpa/build/uvdpa-cli:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/home/lmilleri/go/src/github.com/lmilleri/govdpa/bin/golint: | /home/lmilleri/go/src/github.com/lmilleri/govdpa/.gopath/src/github.com/k8snetworkplumbingwg/govdpa
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 61):
+	 $(info  building golint...)
+	$Q go get -u golang.org/x/lint/golint
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-15 10:36:32.356696169
+#  File has been updated.
+#  Successfully updated.
+
+/home/lmilleri/go/src/github.com/lmilleri/govdpa/.gopath/src/github.com/k8snetworkplumbingwg/govdpa:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 36):
+	 $(info  setting GOPATH...)
+	@mkdir -p $(dir $@)
+	@ln -sf $(CURDIR) $@
+
+test: | /home/lmilleri/go/src/github.com/lmilleri/govdpa/.gopath/src/github.com/k8snetworkplumbingwg/govdpa
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 49):
+	 $(info Running tests...) @ ## Run tests
+	$Q ret=0 && for pkg in $(TESTPKGS); do \
+		cd $(GOPATH)/src/$$pkg && go test || ret=1 ; \
+	done ; test $$ret -eq 0
+
+build: /home/lmilleri/go/src/github.com/lmilleri/govdpa/build/uvdpa-cli /home/lmilleri/go/src/github.com/lmilleri/govdpa/build/kvdpa-cli
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 47):
+	$(info Done!)
+
+help:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 84):
+	@grep -E '^[ a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | \
+		awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-15s\033[0m %s\n", $$1, $$2}'
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/home/lmilleri/go/src/github.com/lmilleri/govdpa/bin:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 41):
+	@mkdir -p $@
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 76):
+	 $(info  Cleaning...)	@ ## Cleanup everything
+	@$(GO) clean -modcache
+	@rm -rf $(GOPATH)
+	@rm -rf $(BUILDDIR)
+
+fmt:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := fmt
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := 
+# automatic
+# | := 
+# automatic
+# < := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/13=8%
+#  recipe to execute (from 'Makefile', line 70):
+	 $(info  running gofmt...) @ ## Run gofmt on all source files
+	@ret=0 && for d in $$($(GO) list -f '{{.Dir}}' ./... | grep -v /vendor/); do \
+		$(GOFMT) -l -w $$d/*.go || ret=$$? ; \
+	 done ; exit $$ret
+
+lint: | /home/lmilleri/go/src/github.com/lmilleri/govdpa/.gopath/src/github.com/k8snetworkplumbingwg/govdpa /home/lmilleri/go/src/github.com/lmilleri/govdpa/bin/golint
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 64):
+	 $(info  running golint...) @ ## Run golint
+	$Q cd $(BASE) && ret=0 && for pkg in $(PKGS); do \
+		test -z "$$($(GOLINT) $$pkg | tee /dev/stderr)" || ret=1 ; \
+	 done ; exit $$ret
+
+/home/lmilleri/go/src/github.com/lmilleri/govdpa/build: | /home/lmilleri/go/src/github.com/lmilleri/govdpa/.gopath/src/github.com/k8snetworkplumbingwg/govdpa
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 43):
+	 $(info Creating build directory...)
+	@cd $(BASE) && mkdir -p $@
+
+# files hash-table stats:
+# Load=17/1024=2%, Rehash=0, Collisions=0/53=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 6 (3) / strings = 601 / storage = 48502 B / avg = 80 B
+# current buf: size = 8162 B / used = 7940 B / count = 86 / avg = 92 B
+# other used: total = 40562 B / count = 515 / avg = 78 B
+# other free: total = 248 B / max = 96 B / min = 1 B / avg = 49 B
+
+# strcache performance: lookups = 642 / hit rate = 6%
+# hash-table stats:
+# Load=601/8192=7%, Rehash=0, Collisions=32/642=5%
+# Finished Make data base on Fri Aug  5 08:34:20 2022
+
+ 

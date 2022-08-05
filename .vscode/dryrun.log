@@ -1,0 +1,33 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/lmilleri/go/src/github.com/lmilleri/govdpa'
+running gofmt...
+## Run gofmt on all source files
+ret=0 && for d in $(go list -f '{{.Dir}}' ./... | grep -v /vendor/); do \
+	gofmt -l -w $d/*.go || ret=$? ; \
+ done ; exit $ret
+setting GOPATH...
+mkdir -p /home/lmilleri/go/src/github.com/lmilleri/govdpa/.gopath/src/github.com/k8snetworkplumbingwg/
+ln -sf /home/lmilleri/go/src/github.com/lmilleri/govdpa /home/lmilleri/go/src/github.com/lmilleri/govdpa/.gopath/src/github.com/k8snetworkplumbingwg/govdpa
+building golint...
+go get -u golang.org/x/lint/golint
+running golint...
+## Run golint
+cd /home/lmilleri/go/src/github.com/lmilleri/govdpa/.gopath/src/github.com/k8snetworkplumbingwg/govdpa && ret=0 && for pkg in ; do \
+	test -z "$(/home/lmilleri/go/src/github.com/lmilleri/govdpa/bin/golint $pkg | tee /dev/stderr)" || ret=1 ; \
+ done ; exit $ret
+ 
+/bin/sh: line 0: cd: /home/lmilleri/go/src/github.com/lmilleri/govdpa/.gopath/src/github.com/k8snetworkplumbingwg/govdpa: No such file or directory
+
+Creating build directory...
+cd /home/lmilleri/go/src/github.com/lmilleri/govdpa/.gopath/src/github.com/k8snetworkplumbingwg/govdpa && mkdir -p /home/lmilleri/go/src/github.com/lmilleri/govdpa/build
+ 
+Building uvdpa-cli 
+ 
+cd cmd/uvdpa-cli && go build -o /home/lmilleri/go/src/github.com/lmilleri/govdpa/build/uvdpa-cli
+ 
+Building kvdpa-cli 
+ 
+cd cmd/kvdpa-cli && go build -o /home/lmilleri/go/src/github.com/lmilleri/govdpa/build/kvdpa-cli
+Done!
+make: Leaving directory '/home/lmilleri/go/src/github.com/lmilleri/govdpa'
+ 
