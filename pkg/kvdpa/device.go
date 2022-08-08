@@ -1,8 +1,10 @@
 package kvdpa
 
 import (
+	"errors"
 	"os"
 	"path/filepath"
+	"strings"
 	"syscall"
 
 	"github.com/vishvananda/netlink/nl"
@@ -221,10 +223,35 @@ func ListVdpaDevices() ([]VdpaDevice, error) {
 	return vdpaDevs, nil
 }
 
+func extractBusNameAndMgmtDeviceName(fullMgmtDeviceName string) (busName string, mgmtDeviceName string, err error) {
+	numSlashes := strings.Count(fullMgmtDeviceName, "/")
+	if numSlashes > 1 {
+		return "", "", errors.New("Expected mgmtDeviceName to be either in the format <mgmtBusName>/<mgmtDeviceName> or <mgmtDeviceName>")
+	} else if numSlashes == 0 {
+		return "", fullMgmtDeviceName, nil
+	} else {
+		values := strings.Split(fullMgmtDeviceName, "/")
+		return values[0], values[1], nil
+	}
+}
+
 /*AddVdpaDevice adds a new vdpa device to the given management device */
 func AddVdpaDevice(mgmtDeviceName string, vdpaDeviceName string) ([][]byte, error) {
 	if mgmtDeviceName == "" || vdpaDeviceName == "" {
 		return nil, unix.EINVAL
+	}
+
+	busName, mgmtDeviceName, err := extractBusNameAndMgmtDeviceName(mgmtDeviceName)
+	if err != nil {
+		return nil, unix.EINVAL
+	}
+
+	var busNameAttr *nl.RtAttr
+	if busName != "" {
+		busNameAttr, err = GetNetlinkOps().NewAttribute(VdpaAttrMgmtDevBusName, busName)
+		if err != nil {
+			return nil, err
+		}
 	}
 
 	mgmtAttr, err := GetNetlinkOps().NewAttribute(VdpaAttrMgmtDevDevName, mgmtDeviceName)
@@ -237,7 +264,26 @@ func AddVdpaDevice(mgmtDeviceName string, vdpaDeviceName string) ([][]byte, erro
 		return nil, err
 	}
 
-	msgs, err := GetNetlinkOps().RunVdpaNetlinkCmd(VdpaCmdDevNew, unix.NLM_F_ACK|unix.NLM_F_REQUEST, []*nl.RtAttr{mgmtAttr, nameAttr})
+	msgs, err := GetNetlinkOps().RunVdpaNetlinkCmd(VdpaCmdDevNew, unix.NLM_F_ACK|unix.NLM_F_REQUEST, []*nl.RtAttr{busNameAttr, mgmtAttr, nameAttr})
+	if err != nil {
+		return nil, err
+	}
+
+	return msgs, nil
+}
+
+/*DeleteVdpaDevice deletes a vdpa device */
+func DeleteVdpaDevice(vdpaDeviceName string) ([][]byte, error) {
+	if vdpaDeviceName == "" {
+		return nil, unix.EINVAL
+	}
+
+	nameAttr, err := GetNetlinkOps().NewAttribute(VdpaAttrDevName, vdpaDeviceName)
+	if err != nil {
+		return nil, err
+	}
+
+	msgs, err := GetNetlinkOps().RunVdpaNetlinkCmd(VdpaCmdDevDel, unix.NLM_F_ACK|unix.NLM_F_REQUEST, []*nl.RtAttr{nameAttr})
 	if err != nil {
 		return nil, err
 	}
