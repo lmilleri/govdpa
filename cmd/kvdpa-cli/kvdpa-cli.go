@@ -46,6 +46,21 @@ func listAction(c *cli.Context) error {
 		devs, err = vdpa.ListVdpaDevices()
 		if err != nil {
 			fmt.Println(err)
+		} else {
+			for _, dev := range devs {
+				fmt.Println("driver: " + dev.Driver())
+				fmt.Println("name: " + dev.Name())
+				fmt.Println("busName: " + dev.MgmtDev().BusName())
+				fmt.Println("devName: " + dev.MgmtDev().DevName())
+				path, err := dev.ParentDevicePath()
+				if err != nil {
+					fmt.Println("path:" + path)
+				}
+				if dev.VirtioNet() != nil {
+					fmt.Println("virtioNet name: " + dev.VirtioNet().Name())
+					fmt.Println("virtioNet NetDev: " + dev.VirtioNet().NetDev())
+				}
+			}
 		}
 	}
 	tmpl := template.Must(template.New("device").Parse(deviceTemplate))
