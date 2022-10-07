@@ -242,6 +242,16 @@ func extractBusNameAndMgmtDeviceName(fullMgmtDeviceName string) (busName string,
 	}
 }
 
+/*GetVdpaDevicesByPciAddress returns the VdpaDevice objects for the given pciAddress */
+func GetVdpaDevicesByPciAddress(pciAddress string) ([]VdpaDevice, error) {
+	busName, mgmtDeviceName, err := extractBusNameAndMgmtDeviceName(pciAddress)
+	if err != nil {
+		return nil, unix.EINVAL
+	}
+
+	return GetVdpaDevicesByMgmtDev(busName, mgmtDeviceName)
+}
+
 /*AddVdpaDevice adds a new vdpa device to the given management device */
 func AddVdpaDevice(mgmtDeviceName string, vdpaDeviceName string) ([][]byte, error) {
 	if mgmtDeviceName == "" || vdpaDeviceName == "" {
