@@ -2,6 +2,7 @@ package kvdpa
 
 import (
 	"errors"
+	"fmt"
 	"os"
 	"path/filepath"
 	"strings"
@@ -263,28 +264,42 @@ func AddVdpaDevice(mgmtDeviceName string, vdpaDeviceName string) ([][]byte, erro
 		return nil, unix.EINVAL
 	}
 
+	fmt.Printf("busName: %s, deviceName:%s\n", busName, mgmtDeviceName)
 	var busNameAttr *nl.RtAttr
 	if busName != "" {
+		fmt.Println("adding busNameAttr")
 		busNameAttr, err = GetNetlinkOps().NewAttribute(VdpaAttrMgmtDevBusName, busName)
 		if err != nil {
 			return nil, err
 		}
 	}
 
+	fmt.Println("adding mgmtDeviceName")
 	mgmtAttr, err := GetNetlinkOps().NewAttribute(VdpaAttrMgmtDevDevName, mgmtDeviceName)
 	if err != nil {
 		return nil, err
 	}
 
+	fmt.Println("adding vdpaDeviceName")
 	nameAttr, err := GetNetlinkOps().NewAttribute(VdpaAttrDevName, vdpaDeviceName)
 	if err != nil {
 		return nil, err
 	}
 
+	fmt.Println("running RunVdpaNetlinkCmd")
 	msgs, err := GetNetlinkOps().RunVdpaNetlinkCmd(VdpaCmdDevNew, unix.NLM_F_ACK|unix.NLM_F_REQUEST, []*nl.RtAttr{busNameAttr, mgmtAttr, nameAttr})
+	if err != nil {
+		println("error from RunVdpaNetlinkCmd")
+		return nil, err
+	}
+
+	fmt.Println("running parseDevLinkVdpaDevList")
+	vdpaDevs, err := parseDevLinkVdpaDevList(msgs)
 	if err != nil {
 		return nil, err
 	}
+
+	fmt.Println(vdpaDevs)
 
 	return msgs, nil
 }
@@ -310,8 +325,10 @@ func DeleteVdpaDevice(vdpaDeviceName string) ([][]byte, error) {
 
 func parseDevLinkVdpaDevList(msgs [][]byte) ([]VdpaDevice, error) {
 	devices := make([]VdpaDevice, 0, len(msgs))
+	fmt.Printf("number of messages %v", len(msgs))
 
 	for _, m := range msgs {
+		fmt.Printf("message %v", m)
 		attrs, err := nl.ParseRouteAttr(m[nl.SizeofGenlmsg:])
 		if err != nil {
 			return nil, err
