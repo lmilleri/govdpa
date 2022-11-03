@@ -70,3 +70,18 @@ In order to build the application, just run the top level Makefile:
     ./build/kvdpa-cli get 0000:05:00.4 0000:05:00.2
     0000:05:00.4 : {name:vdpa3 driver:vhost_vdpa path:/dev/vhost-vdpa-3}
     0000:05:00.2 : {name:vdpa1 driver:vhost_vdpa path:/dev/vhost-vdpa-1}
+
+## Create vdpa device
+
+    Usage: kvdpa-cli add [mgmtdev] [dev]
+    
+    Example:
+        ./build/kvdpa-cli add 0000:05:00.4 vdpa0
+
+## Delete vdpa device
+
+    Usage: kvdpa-cli del [dev]
+    
+    Example:
+        ./build/kvdpa-cli del vdpa0
+    
