@@ -5,6 +5,8 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+
+	"github.com/k8snetworkplumbingwg/govdpa/pkg/config"
 )
 
 const (
@@ -35,7 +37,7 @@ func (v *virtioNet) NetDev() string {
 
 // GetVirtioNetInPath returns the VirtioNet found in the provided parent device's path
 func GetVirtioNetInPath(parentPath string) (VirtioNet, error) {
-	fd, err := os.Open(parentPath)
+	fd, err := os.Open(config.GetInstance().AdjustPath(parentPath))
 	if err != nil {
 		return nil, err
 	}
@@ -49,12 +51,12 @@ func GetVirtioNetInPath(parentPath string) (VirtioNet, error) {
 		if strings.Contains(file.Name(), "virtio") &&
 			file.IsDir() {
 			virtioDevPath := filepath.Join(virtioDevDir, file.Name())
-			if _, err := os.Stat(virtioDevPath); os.IsNotExist(err) {
+			if _, err := os.Stat(config.GetInstance().AdjustPath(virtioDevPath)); os.IsNotExist(err) {
 				return nil, fmt.Errorf("virtio device %s does not exist", virtioDevPath)
 			}
 			var netdev string
 			// Read the "net" directory in the virtio device path
-			netDeviceFiles, err := os.ReadDir(filepath.Join(virtioDevPath, "net"))
+			netDeviceFiles, err := os.ReadDir(config.GetInstance().AdjustPath(filepath.Join(virtioDevPath, "net")))
 			if err == nil && len(netDeviceFiles) == 1 {
 				netdev = strings.TrimSpace(netDeviceFiles[0].Name())
 			}

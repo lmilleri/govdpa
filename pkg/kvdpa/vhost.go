@@ -5,6 +5,8 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+
+	"github.com/k8snetworkplumbingwg/govdpa/pkg/config"
 )
 
 // VhostVdpa is the vhost-vdpa device information
@@ -31,7 +33,7 @@ func (v *vhostVdpa) Path() string {
 
 // GetVhostVdpaDevInPath returns the VhostVdpa found in the provided parent device's path
 func GetVhostVdpaDevInPath(parentPath string) (VhostVdpa, error) {
-	fd, err := os.Open(parentPath)
+	fd, err := os.Open(config.GetInstance().AdjustPath(parentPath))
 	if err != nil {
 		return nil, err
 	}
@@ -44,7 +46,7 @@ func GetVhostVdpaDevInPath(parentPath string) (VhostVdpa, error) {
 	for _, file := range fileInfos {
 		if strings.Contains(file.Name(), "vhost-vdpa") &&
 			file.IsDir() {
-			devicePath := filepath.Join(vdpaVhostDevDir, file.Name())
+			devicePath := config.GetInstance().AdjustPath(filepath.Join(vdpaVhostDevDir, file.Name()))
 			info, err := os.Stat(devicePath)
 			if err != nil {
 				return nil, err

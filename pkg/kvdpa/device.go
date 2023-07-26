@@ -7,6 +7,7 @@ import (
 	"strings"
 	"syscall"
 
+	"github.com/k8snetworkplumbingwg/govdpa/pkg/config"
 	"github.com/vishvananda/netlink/nl"
 	"golang.org/x/sys/unix"
 )
@@ -73,7 +74,7 @@ func (vd *vdpaDev) VirtioNet() VirtioNet {
 // getBusInfo populates the vdpa bus information
 // the vdpa device must have at least the name prepopulated
 func (vd *vdpaDev) getBusInfo() error {
-	driverLink, err := os.Readlink(filepath.Join(vdpaBusDevDir, vd.name, "driver"))
+	driverLink, err := os.Readlink(config.GetInstance().AdjustPath(filepath.Join(vdpaBusDevDir, vd.name, "driver")))
 	if err != nil {
 		// No error if driver is not present. The device is simply not bound to any.
 		return nil
