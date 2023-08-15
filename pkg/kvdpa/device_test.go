@@ -128,6 +128,98 @@ func TestVdpaDevList(t *testing.T) {
 	}
 }
 
+func TestVdpaDevListWithFilter(t *testing.T) {
+	tests := []struct {
+		name     string
+		err      bool
+		response []VdpaDevice
+	}{
+		{
+			name: "Multiple SR-IOV and SF devices",
+			err:  false,
+			response: []VdpaDevice{
+				&vdpaDev{
+					name: "vdpa0",
+					mgmtDev: &mgmtDev{
+						devName: "0000:01:01",
+					},
+				},
+				&vdpaDev{
+					name: "vdpa1",
+					mgmtDev: &mgmtDev{
+						busName: "pci",
+						devName: "0000:01:02",
+					},
+				},
+				&vdpaDev{
+					name: "vdpa2",
+					mgmtDev: &mgmtDev{
+						busName: "pci",
+						devName: "0000:01:02",
+					},
+				},
+				&vdpaDev{
+					name: "vdpa3",
+					mgmtDev: &mgmtDev{
+						busName: "pci",
+						devName: "0000:01:03",
+					},
+				},
+			},
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(fmt.Sprintf("%s_%s", "TestVdpaDevListWithFilter", tt.name), func(t *testing.T) {
+			netLinkMock := &mocks.NetlinkOps{}
+			SetNetlinkOps(netLinkMock)
+			netLinkMock.On("RunVdpaNetlinkCmd",
+				VdpaCmdDevGet,
+				mock.MatchedBy(func(flags int) bool {
+					return (flags|syscall.NLM_F_DUMP != 0)
+				}),
+				mock.AnythingOfType("[]*nl.RtAttr")).
+				Return(vdpaDevToNlMessage(t, tt.response...), nil)
+			// no filters, all devices are returned
+			devs, err := ListVdpaDevices()
+			if tt.err {
+				assert.NotNil(t, err)
+			} else {
+				assert.Nil(t, err)
+				assert.Equal(t, tt.response, devs)
+			}
+			// mgmtdev: 0000:01:01
+			devs, err = GetVdpaDevicesByPciAddress("0000:01:01")
+			if tt.err {
+				assert.NotNil(t, err)
+			} else {
+				assert.Nil(t, err)
+				assert.Equal(t, len(devs), 1)
+				assert.Equal(t, tt.response[0], devs[0])
+			}
+			// mgmtdev: pci/0000:01:02
+			devs, err = GetVdpaDevicesByPciAddress("pci/0000:01:02")
+			if tt.err {
+				assert.NotNil(t, err)
+			} else {
+				assert.Nil(t, err)
+				assert.Equal(t, len(devs), 2)
+				assert.Equal(t, tt.response[1], devs[0])
+				assert.Equal(t, tt.response[2], devs[1])
+			}
+			// mgmtdev: pci/0000:01:03
+			devs, err = GetVdpaDevicesByPciAddress("pci/0000:01:03")
+			if tt.err {
+				assert.NotNil(t, err)
+			} else {
+				assert.Nil(t, err)
+				assert.Equal(t, len(devs), 1)
+				assert.Equal(t, tt.response[3], devs[0])
+			}
+		})
+	}
+}
+
 func TestVdpaDevGet(t *testing.T) {
 	tests := []struct {
 		name     string
@@ -304,7 +396,7 @@ func TestVdpaDevGetByMgmt(t *testing.T) {
 		},
 		{
 			name:        "Wrong",
-			err:         syscall.ENODEV,
+			response:    []VdpaDevice{},
 			mgmtDevName: "noDev",
 			mgmtBusName: "wrongBus",
 		},
